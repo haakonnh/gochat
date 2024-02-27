@@ -10,7 +10,7 @@ import (
 func main() {
 	app := pocketbase.New()
 
-	// customize it with event hooks https://pocketbase.io/docs/event-hooks/ ...
+	// create handlers for routes
 
 	if err := app.Start(); err != nil {
 		log.Fatal(err)

@@ -36,7 +36,12 @@ h1 {
 }
 
 .card {
-  padding: 2em;
+    background-color: #1a1a1a;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: auto;
+
 }
 
 #app {
@@ -195,4 +200,11 @@ body{
     padding: 25px;
     border-radius: 10px;
     background-color: rgba(255,255,255,0.13);
+}
+
+.dashboard-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px;
 }

@@ -5,6 +5,7 @@
     let newMessage;
     let messages = [];
     let unsubscribe;
+   
 
     onMount(async () => {
         const resultList = await pb.collection('messages').getList(1, 50, {
@@ -12,6 +13,8 @@
             expand: 'user',
         });
         messages = resultList.items;
+
+
 
         unsubscribe = await pb.collection('messages').subscribe('*', async ({action, record}) => {
             if (action === 'create') {
@@ -46,7 +49,7 @@
 
 
 
-{#if $currentUser}
+{#if $currentUser && hasAccess}
     <h1>Messages</h1>
     <div class="messages">
         {#each messages as message (message.id)}
